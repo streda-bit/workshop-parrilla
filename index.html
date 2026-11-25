@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workshop de Parrilla com Chef Elhias | Arandu Gastronomia</title>
+<meta name="description" content="Workshop de parrilla e hambúrguer com o Chef Elhias, premiado no Festival Gastronômico 2025. 10/12 às 18h30 no Arandu Gastronomia, Santa Rosa. Apenas 10 vagas.">
+<meta property="og:title" content="Workshop de Parrilla com Chef Elhias · Arandu">
+<meta property="og:description" content="Entrecot, vazio, 2 blends de hambúrguer e um prato secreto. 10/12 às 18h30 no Arandu. Só 10 vagas.">
+<meta property="og:image" content="img/parrilla-fogo.jpg">
+<meta name="theme-color" content="#0c0806">
+<link rel="preload" as="image" href="img/parrilla-fogo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0806;
+    --bg2:#140d09;
+    --card:#1b120d;
+    --line:#2d2018;
+    --wood:#8a5531;
+    --amber:#e8872f;
+    --amber2:#f4a64a;
+    --cream:#f5ede3;
+    --muted:#b9a797;
+    --navy:#10213a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--cream);
+    font-family:'Montserrat',system-ui,sans-serif;font-size:16px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{display:block;max-width:100%}
+  .wrap{max-width:560px;margin:0 auto;padding:0 22px}
+  p{color:var(--muted)}
+  strong{color:var(--cream);font-weight:600}
+
+  /* tipografia da marca */
+  .cinzel{font-family:'Cinzel',serif;letter-spacing:.06em}
+  .script{font-family:'Mrs Saint Delafield',cursive;font-weight:400;letter-spacing:0;text-transform:none;line-height:1}
+  .logo{font-family:'Cinzel',serif;font-weight:600;letter-spacing:.14em;line-height:1;text-align:center;color:var(--cream)}
+  .logo small{display:block;font-family:'Montserrat';font-weight:500;font-size:.26em;letter-spacing:.55em;margin-top:.35em;padding-left:.55em;color:rgba(245,237,227,.8)}
+  .label{
+    display:inline-block;font-weight:700;font-size:13px;line-height:1.25;color:#fff;
+    background:#0b0b0b;padding:5px 10px;border-radius:3px;
+  }
+  .label.navy{background:var(--navy)}
+  .eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--amber2)}
+  h2{font-family:'Cinzel',serif;font-weight:600;font-size:30px;line-height:1.15;letter-spacing:.03em;margin:10px 0 16px;color:var(--cream)}
+  h2 .script{font-size:1.75em;color:var(--amber2);display:inline-block;transform:translateY(.12em);margin-left:.05em}
+  section{padding:68px 0}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;overflow:hidden;isolation:isolate}
+  .hero .bg{position:absolute;inset:0;z-index:-2}
+  .hero .bg img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;transform:scale(1.05);animation:slowzoom 18s ease-out forwards}
+  @keyframes slowzoom{to{transform:scale(1)}}
+  .hero::after{
+    content:"";position:absolute;inset:0;z-index:-1;
+    background:
+      linear-gradient(180deg, rgba(12,8,6,.75) 0%, rgba(12,8,6,.15) 28%, rgba(12,8,6,.35) 52%, rgba(12,8,6,.96) 80%, var(--bg) 100%);
+  }
+  .hero .top{padding:26px 0 0;text-align:center}
+  .hero .top .logo{font-size:30px}
+  .hero .content{margin-top:auto;padding-bottom:34px}
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--cream);background:rgba(12,8,6,.55);backdrop-filter:blur(6px);
+    border:1px solid rgba(245,237,227,.25);padding:7px 12px;border-radius:999px;margin-bottom:16px;
+  }
+  .badge i{width:7px;height:7px;border-radius:50%;background:var(--amber);box-shadow:0 0 10px var(--amber);animation:pulse 1.6s infinite}
+  @keyframes pulse{50%{opacity:.35}}
+  .hero h1{font-family:'Cinzel',serif;font-weight:700;font-size:40px;line-height:1.02;letter-spacing:.04em;text-shadow:0 4px 30px rgba(0,0,0,.6)}
+  .hero h1 .script{display:block;font-size:2.05em;color:#fff;margin:-.05em 0 -.12em .1em;text-shadow:0 2px 20px rgba(0,0,0,.6)}
+  .hero .lead{font-size:16px;color:#e2d5c7;margin:18px 0 22px;max-width:30em}
+  .facts{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;margin-bottom:6px;align-items:center}
+  .facts .label{justify-self:start}
+  .facts span{font-size:14px;color:var(--cream);font-weight:500}
+
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:10px;width:100%;
+    padding:18px 20px;border-radius:10px;text-decoration:none;
+    font-family:'Montserrat';font-weight:800;font-size:15.5px;letter-spacing:.02em;
+    color:#1b0e05;background:linear-gradient(180deg,var(--amber2),var(--amber));
+    box-shadow:0 12px 30px -10px rgba(232,135,47,.75), inset 0 1px 0 rgba(255,255,255,.35);
+    transition:transform .15s;
+  }
+  .btn:active{transform:scale(.98)}
+  .btn svg{width:20px;height:20px;flex:none}
+  .micro{text-align:center;font-size:13px;margin-top:10px;color:var(--muted)}
+  .micro b{color:var(--amber2)}
+
+  /* ---------- MANIFESTO ---------- */
+  .manifesto{text-align:center;padding:56px 0 40px}
+  .manifesto p{font-family:'Cinzel',serif;font-size:21px;line-height:1.45;color:var(--cream);letter-spacing:.02em}
+  .manifesto p em{font-style:normal;color:var(--amber2)}
+  .manifesto .sig{font-family:'Mrs Saint Delafield';font-size:50px;color:var(--muted);margin-top:8px;line-height:1}
+
+  /* ---------- APRENDER ---------- */
+  .skills{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:4px 0 32px}
+  .skills div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 12px 12px 14px;font-size:13.5px;font-weight:600;color:var(--cream);display:flex;gap:10px;align-items:center}
+  .skills div svg{width:18px;height:18px;flex:none;color:var(--amber2)}
+  .dishes{display:grid;gap:14px}
+  .dish{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--card)}
+  .dish .photo{position:relative;aspect-ratio:16/10;overflow:hidden}
+  .dish .photo img{width:100%;height:100%;object-fit:cover}
+  .dish .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(12,8,6,.9))}
+  .dish .photo .name{position:absolute;left:18px;right:18px;bottom:12px;z-index:1}
+  .dish .photo .name .script{font-size:52px;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.7)}
+  .dish .body{padding:16px 18px 18px}
+  .dish .body .label{margin-bottom:10px}
+  .dish .body p{font-size:14.5px}
+  .dish.text{padding:20px 18px}
+  .dish.text .num{font-family:'Cinzel';font-weight:700;color:var(--amber2);font-size:13px;letter-spacing:.2em}
+  .dish.text h3{font-family:'Cinzel';font-weight:600;font-size:22px;letter-spacing:.04em;margin:4px 0 6px}
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .pair .dish.text{display:flex;flex-direction:column}
+  .pair .dish.text h3{font-size:19px}
+  .pair .dish.text p{font-size:13.5px}
+  .secret{border-color:rgba(244,166,74,.5)}
+  .secret .photo img{filter:blur(2px) brightness(.55) saturate(1.1)}
+  .secret .photo .lock{
+    position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;
+  }
+  .secret .photo .lock .q{font-family:'Cinzel';font-size:64px;font-weight:700;color:var(--amber2);line-height:1;text-shadow:0 0 30px rgba(232,135,47,.6)}
+  .secret .photo::after{display:none}
+
+  /* ---------- GALERIA ---------- */
+  .strip{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 22px 6px;margin:0 auto;max-width:560px;scrollbar-width:none}
+  .strip::-webkit-scrollbar{display:none}
+  .strip figure{flex:0 0 62%;scroll-snap-align:start;border-radius:14px;overflow:hidden;aspect-ratio:3/4;position:relative}
+  .strip figure img{width:100%;height:100%;object-fit:cover}
+  .strip figcaption{position:absolute;left:10px;bottom:10px}
+
+  /* ---------- CHEF ---------- */
+  .chef .photo{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/3;margin-bottom:22px}
+  .chef .photo img{width:100%;height:100%;object-fit:cover}
+  .chef .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(12,8,6,.85))}
+  .chef .photo .sign{position:absolute;left:16px;bottom:10px;z-index:1}
+  .chef .photo .sign .label{margin-bottom:2px}
+  .chef .photo .sign .script{font-size:58px;color:#fff;display:block;text-shadow:0 2px 14px rgba(0,0,0,.7)}
+  .award{
+    display:flex;gap:14px;align-items:center;margin:22px 0;
+    padding:16px;border-radius:14px;
+    background:linear-gradient(135deg,rgba(232,135,47,.14),rgba(232,135,47,.03));
+    border:1px solid rgba(244,166,74,.4);
+  }
+  .award svg{width:36px;height:36px;flex:none;color:var(--amber2)}
+  .award b{display:block;font-family:'Cinzel';font-size:17px;letter-spacing:.04em;color:var(--cream)}
+  .award span{font-size:13px;color:var(--muted)}
+  .facts-list{list-style:none;display:grid;gap:10px;margin-top:18px}
+  .facts-list li{display:flex;gap:12px;font-size:15px;color:var(--muted)}
+  .facts-list li::before{content:"";flex:none;width:6px;height:6px;margin-top:10px;background:var(--amber);transform:rotate(45deg)}
+  .events{margin-top:22px}
+  .events p{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:10px}
+  .events div{display:flex;flex-wrap:wrap;gap:8px}
+
+
+  /* ---------- CHEF HERO ---------- */
+  .chefhero{position:relative;isolation:isolate;overflow:hidden;padding:0 0 60px;background:#000}
+  .chefhero .portrait{position:relative;max-width:560px;margin:0 auto;aspect-ratio:3/4;max-height:92svh}
+  .chefhero .portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+  .chefhero .portrait::after{content:"";position:absolute;inset:0;background:
+      linear-gradient(180deg,var(--bg) 0%,transparent 12%,transparent 62%,rgba(0,0,0,.85) 88%,#000 100%)}
+  .chefhero .intro{position:relative;z-index:1;max-width:560px;margin:-70px auto 18px;padding:0 22px}
+  .chefhero .intro .eyebrow{display:block;margin-bottom:18px}
+  .chefhero .intro .script{font-size:96px;color:#fff;display:block;line-height:.9;text-shadow:0 4px 24px rgba(0,0,0,.7)}
+  .chefhero .intro .role{font-family:'Cinzel';font-size:15px;letter-spacing:.24em;color:var(--cream);margin-top:6px}
+  .chefhero .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:6px 0 22px}
+  .chefhero .stats div{text-align:center;padding:14px 6px;border-radius:12px;background:var(--card);border:1px solid var(--line)}
+  .chefhero .stats b{display:block;font-family:'Cinzel';font-weight:700;font-size:26px;line-height:1.1;color:var(--amber2)}
+  .chefhero .stats span{font-size:11px;line-height:1.3;color:var(--muted);display:block;margin-top:4px}
+  .chefhero .bio{font-size:15.5px}
+  .chefhero .bio + .bio{margin-top:12px}
+  .award{display:flex;gap:14px;align-items:center;margin:22px 0;padding:16px;border-radius:14px;
+    background:linear-gradient(135deg,rgba(232,135,47,.16),rgba(232,135,47,.03));border:1px solid rgba(244,166,74,.45)}
+  .award svg{width:38px;height:38px;flex:none;color:var(--amber2)}
+  .award b{display:block;font-family:'Cinzel';font-size:17px;letter-spacing:.04em;color:var(--cream)}
+  .award span{font-size:13px;color:var(--muted)}
+  .events p{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin-bottom:10px}
+  .events div{display:flex;flex-wrap:wrap;gap:8px}
+
+  .stage{margin-top:30px;padding:24px 18px 18px;border-radius:18px;border:1px solid rgba(244,166,74,.35);
+    background:radial-gradient(120% 80% at 50% 0%,rgba(232,135,47,.18),transparent 65%),var(--bg2);text-align:center}
+  .stage h3{font-family:'Cinzel';font-weight:600;font-size:22px;line-height:1.2;letter-spacing:.03em;margin:8px 0 20px;color:var(--cream)}
+  .stage h3 .script{display:block;font-size:2em;color:var(--amber2);line-height:.9;margin-top:2px}
+  .evlist{display:grid;gap:10px;text-align:left}
+  .ev{position:relative;padding:16px 16px 16px 20px;border-radius:12px;background:rgba(12,8,6,.7);border:1px solid var(--line);border-left:3px solid var(--amber)}
+  .ev b{display:block;font-family:'Cinzel';font-weight:700;font-size:21px;letter-spacing:.05em;color:var(--cream);line-height:1.2}
+  .ev span{display:block;font-size:13.5px;color:var(--muted);margin-top:4px;line-height:1.45}
+  .ev.win{border-color:rgba(244,166,74,.6);border-left-color:var(--amber2);background:linear-gradient(135deg,rgba(232,135,47,.2),rgba(12,8,6,.8))}
+  .ev .ribbon{display:inline-flex;align-items:center;gap:6px;margin:0 0 8px;font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#1b0e05;background:var(--amber2);padding:4px 9px;border-radius:4px}
+  .ev .ribbon svg{width:13px;height:13px}
+
+  /* ---------- INCLUSO ---------- */
+  .incl{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .inc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .inc svg{width:26px;height:26px;color:var(--amber2);margin-bottom:10px}
+  .inc b{display:block;font-size:15px;color:var(--cream);margin-bottom:2px}
+  .inc span{font-size:13px;color:var(--muted);line-height:1.45;display:block}
+
+  /* ---------- OFERTA ---------- */
+  .offer{position:relative;isolation:isolate;overflow:hidden}
+  .offer .bg{position:absolute;inset:0;z-index:-2}
+  .offer .bg img{width:100%;height:100%;object-fit:cover;opacity:.35}
+  .offer::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,var(--bg) 0%,rgba(12,8,6,.7) 30%,rgba(12,8,6,.85) 70%,var(--bg) 100%)}
+  .ticket{
+    background:rgba(20,13,9,.88);backdrop-filter:blur(8px);
+    border:1px solid rgba(244,166,74,.45);border-radius:20px;padding:26px 22px 22px;
+    box-shadow:0 30px 60px -30px rgba(232,135,47,.55);
+  }
+  .ticket .head{text-align:center;padding-bottom:20px;margin-bottom:20px;border-bottom:1px dashed rgba(245,237,227,.18)}
+  .ticket .head .logo{font-size:20px;margin-bottom:16px}
+  .old{font-size:15px}
+  .price{font-family:'Cinzel';font-weight:700;font-size:62px;line-height:1;margin:6px 0 10px;color:var(--cream)}
+  .price small{font-size:22px;vertical-align:top;position:relative;top:10px;margin-right:4px}
+  .checklist{list-style:none;display:grid;gap:10px;margin-bottom:22px}
+  .checklist li{display:flex;gap:10px;font-size:15px;color:var(--cream)}
+  .checklist svg{flex:none;width:20px;height:20px;color:var(--amber2);margin-top:2px}
+  .seats{margin-bottom:18px}
+  .seats .row{display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px;color:var(--muted)}
+  .seats .row b{color:var(--amber2)}
+  .dots{display:grid;grid-template-columns:repeat(10,1fr);gap:5px}
+  .dots i{height:10px;border-radius:2px;background:linear-gradient(180deg,var(--amber2),var(--amber))}
+  .dots i.taken{background:#3a2a1f}
+  .how{margin-top:28px;display:grid;gap:14px}
+  .how div{display:flex;gap:14px;align-items:flex-start}
+  .how b.n{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-family:'Cinzel';font-size:14px;background:rgba(232,135,47,.15);color:var(--amber2);border:1px solid rgba(232,135,47,.4)}
+  .how p{font-size:14.5px}
+  .countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}
+  .countdown div{background:rgba(27,18,13,.85);border:1px solid var(--line);border-radius:10px;padding:10px 4px;text-align:center}
+  .countdown b{display:block;font-family:'Cinzel';font-size:26px;font-weight:700;line-height:1.1}
+  .countdown span{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+  /* ---------- FAQ ---------- */
+  details{border-bottom:1px solid var(--line);padding:18px 0}
+  details summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:12px;font-weight:600;color:var(--cream)}
+  details summary::-webkit-details-marker{display:none}
+  details summary::after{content:"+";font-family:'Cinzel';font-size:22px;line-height:1;color:var(--amber2);transition:transform .2s}
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{margin-top:10px;font-size:15px}
+
+  /* ---------- FINAL ---------- */
+  .final{position:relative;isolation:isolate;overflow:hidden;text-align:center;padding:110px 0 40px}
+  .final .bg{position:absolute;inset:0;z-index:-2}
+  .final .bg img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+  .final::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,var(--bg) 0%,rgba(12,8,6,.35) 35%,rgba(12,8,6,.8) 70%,var(--bg) 100%)}
+  .final h2{font-size:32px}
+  .final h2 .script{display:block;margin:0}
+  .final p.sub{color:#e2d5c7;margin-bottom:24px}
+  footer{padding:40px 0 10px;text-align:center}
+  footer .logo{font-size:22px;opacity:.85}
+  footer p{font-size:12px;margin-top:10px;color:#7d6c5e}
+
+  /* ---------- STICKY ---------- */
+  .sticky{
+    position:fixed;left:0;right:0;bottom:0;z-index:20;
+    padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+    background:rgba(12,8,6,.92);backdrop-filter:blur(10px);border-top:1px solid var(--line);
+    transform:translateY(110%);transition:transform .3s ease;
+  }
+  .sticky.show{transform:none}
+  .sticky .inner{max-width:560px;margin:0 auto;display:flex;align-items:center;gap:14px}
+  .sticky .info{flex:none;line-height:1.15}
+  .sticky .info b{display:block;font-family:'Cinzel';font-size:22px;font-weight:700}
+  .sticky .info span{font-size:11px;color:var(--muted)}
+  .sticky .btn{padding:14px 16px;font-size:14.5px}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.hero .bg img{animation:none}}
+  @media (max-width:370px){
+    .hero h1{font-size:34px}
+    h2{font-size:26px}
+    .pair,.incl,.skills{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="bg"><img src="img/parrilla-fogo.jpg" alt="Hambúrgueres na parrilla com fogo de lenha no Arandu"></div>
+  <div class="wrap top"><div class="logo">ARANDU<small>gastronomia</small></div></div>
+
+  <div class="wrap content">
+    <div class="badge"><i></i>Turma única · só 10 vagas</div>
+    <h1>WORKSHOP DE PARRILLA<span class="script">com Chef Elhias</span></h1>
+    <p class="lead">Aprenda a dominar o fogo, acertar o ponto dos cortes e fazer hambúrguer de restaurante, com quem foi <strong>premiado pelo júri do Festival Gastronômico 2025</strong>.</p>
+
+    <div class="facts">
+      <span class="label">10 DE DEZEMBRO</span><span>Quinta-feira, a partir das 18h30</span>
+      <span class="label navy">NO ARANDU</span><span>Santa Rosa · RS</span>
+    </div>
+
+  </div>
+</header>
+
+<!-- ================= CHEF HERO ================= -->
+<section class="chefhero">
+  <div class="portrait">
+    <img src="img/elhias.jpg" alt="Chef Elhias, do Arandu Gastronomia">
+  </div>
+  <div class="intro">
+    <span class="eyebrow">Quem vai te ensinar</span>
+    <span class="script">Elhias</span>
+    <div class="role">CHEF &amp; GASTRÔNOMO</div>
+  </div>
+
+  <div class="wrap">
+    <div class="stats reveal">
+      <div><b>2025</b><span>Prêmio Prato Principal</span></div>
+      <div><b>3</b><span>países na bagagem</span></div>
+      <div><b>11</b><span>anos no Brasil</span></div>
+    </div>
+
+    <p class="bio">Nascido em <strong>Assunção, no Paraguai</strong>, o Elhias morou e estudou na <strong>Espanha</strong> e escolheu o Brasil para viver há 11 anos. Na cozinha dele, a parrilla sul-americana encontra a técnica europeia.</p>
+    <p class="bio">Hoje comanda o <strong>Arandu Gastronomia</strong>, em Santa Rosa, e agora abre a cozinha para ensinar o que faz na parrilla a um grupo de só 10 pessoas.</p>
+
+
+    <div class="stage reveal">
+      <span class="eyebrow">O Arandu já esteve</span>
+      <h3>Nos eventos mais conhecidos <span class="script">de Santa Rosa</span></h3>
+      <div class="evlist">
+        <div class="ev">
+          <b>Musicanto</b>
+          <span>O Arandu levou sua cozinha a um dos eventos mais tradicionais da cidade</span>
+        </div>
+        <div class="ev">
+          <b>4 Mãos</b>
+          <span>Mais um dos grandes eventos da cidade com a cozinha assinada pelo Arandu</span>
+        </div>
+        <div class="ev win">
+          <span class="ribbon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg>Premiado</span>
+          <b>Festival Gastronômico</b>
+          <span>Vencedor do <strong>Prêmio Prato Principal</strong>, escolhido pelo júri em 2025</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MANIFESTO ================= -->
+<div class="wrap manifesto reveal">
+  <p>O fogo não perdoa erro.<br>Mas quem <em>entende o fogo</em>,<br>nunca mais erra o ponto.</p>
+  <div class="sig">Arandu</div>
+</div>
+
+<!-- ================= O QUE VAI APRENDER ================= -->
+<section style="padding-top:30px">
+  <div class="wrap">
+    <span class="eyebrow">O que você vai aprender</span>
+    <h2>Os segredos da <span class="script">parrilla</span></h2>
+    <p style="margin-bottom:20px">É o que o Elhias faz todo dia na cozinha do Arandu, explicado do jeito que você consegue repetir em casa.</p>
+
+    <div class="skills reveal">
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c1 4 5 6 5 11a5 5 0 0 1-10 0c0-2 1-3.5 2-4.5 0 2 1 3 2 3 0-3-1-6 1-9.5z"/></svg>Montar e controlar o fogo</div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.8V4a2 2 0 1 0-4 0v10.8a4 4 0 1 0 4 0z"/></svg>Temperatura certa</div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16M4 12h16M4 16h16M8 4v16"/></svg>Altura da parrilla</div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Ponto exato das carnes</div>
+    </div>
+
+    <div class="dishes">
+      <div class="pair reveal">
+        <div class="dish text">
+          <span class="num">01</span>
+          <h3>Entrecot</h3>
+          <p>O corte nobre na parrilla, do tempero ao ponto: crosta por fora e suculento por dentro.</p>
+        </div>
+        <div class="dish text">
+          <span class="num">02</span>
+          <h3>Vazio</h3>
+          <p>O clássico da parrilla sul-americana, assado no tempo certo para não ficar seco.</p>
+        </div>
+      </div>
+
+      <div class="dish reveal">
+        <div class="photo">
+          <img src="img/burger-corte.jpg" alt="Hambúrguer do Arandu cortado ao meio, ao ponto" loading="lazy" style="object-position:50% 45%">
+          <div class="name"><span class="script">2 blends</span></div>
+        </div>
+        <div class="body">
+          <span class="label">03 · Criação assinada pelo Chef Elhias</span>
+          <p>A proporção das carnes, a moagem, a modelagem e o ponto: tudo o que transforma um hambúrguer comum em <strong>hambúrguer de restaurante</strong>.</p>
+        </div>
+      </div>
+
+      <div class="dish secret reveal">
+        <div class="photo">
+          <img src="img/lenha.jpg" alt="" loading="lazy" style="object-position:50% 60%">
+          <div class="lock">
+            <div class="q">?</div>
+            <span class="label navy">PRATO SECRETO</span>
+          </div>
+        </div>
+        <div class="body">
+          <span class="label">04 · Pronto em 10 minutos</span>
+          <p>Um prato especial que o Elhias domina, com <strong>entrecot</strong> como protagonista. O nome fica em segredo e <strong>só é revelado na noite</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALERIA ================= -->
+<div class="strip reveal" aria-label="Fotos do Arandu">
+  <figure><img src="img/burger-bacon.jpg" alt="Hambúrguer com bacon do Arandu" loading="lazy" style="object-position:35% 50%"></figure>
+  <figure><img src="img/burger-arandu.jpg" alt="Hambúrguer na tábua do Arandu" loading="lazy"></figure>
+  <figure><img src="img/parrilla-fogo.jpg" alt="Carne na parrilla" loading="lazy"></figure>
+  <figure><img src="img/chef-chapa.jpg" alt="Chef preparando bacon na chapa" loading="lazy" style="object-position:60% 50%"></figure>
+</div>
+
+<!-- ================= INCLUSO ================= -->
+<section style="padding-top:20px">
+  <div class="wrap">
+    <span class="eyebrow">Tudo incluso</span>
+    <h2>Uma noite <span class="script">completa</span></h2>
+    <div class="incl reveal">
+      <div class="inc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c1 4 5 6 5 11a5 5 0 0 1-10 0c0-2 1-3.5 2-4.5 0 2 1 3 2 3 0-3-1-6 1-9.5z"/></svg>
+        <b>Aula com o chef</b><span>Do fogo ao prato, ao lado da parrilla</span>
+      </div>
+      <div class="inc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18M5 11a7 7 0 0 1 14 0M4 15h16l-1 3H5z"/></svg>
+        <b>Comida à vontade</b><span>Você prova tudo o que for preparado</span>
+      </div>
+      <div class="inc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h10v11a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2zM16 10h2a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2M6 8a3 3 0 0 1 3-4 3 3 0 0 1 5 0 3 3 0 0 1 2 4"/></svg>
+        <b>Chopp</b><span>Gelado, para acompanhar a noite toda</span>
+      </div>
+      <div class="inc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20a6 6 0 0 1 12 0M14 20a4.5 4.5 0 0 1 7 0"/></svg>
+        <b>Grupo seleto</b><span>Só 10 pessoas, com atenção de perto</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OFERTA ================= -->
+<section class="offer" id="vaga">
+  <div class="bg"><img src="img/burger-bacon.jpg" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <span class="eyebrow">Sua vaga</span>
+    <h2>Garanta seu lugar <span class="script">na parrilla</span></h2>
+
+    <div class="ticket reveal">
+      <div class="head">
+        <div class="logo">ARANDU<small>gastronomia</small></div>
+        <div class="old">De <s>R$ 780</s> por</div>
+        <div class="price"><small>R$</small>487</div>
+        <span class="label navy">ECONOMIA DE R$ 293</span>
+      </div>
+
+      <ul class="checklist">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Workshop completo com o Chef Elhias</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Entrecot, vazio, 2 blends e o prato secreto</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Comida à vontade durante o evento</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Chopp incluso</li>
+      </ul>
+
+      <div class="seats">
+        <div class="row"><span>Vagas disponíveis</span><b><span class="js-left">10</span> de 10</b></div>
+        <div class="dots" id="dots"></div>
+      </div>
+
+      <a class="btn js-wpp" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></svg>
+        RESERVAR PELO WHATSAPP
+      </a>
+      <p class="micro">Pagamento via Pix · vaga confirmada após o pagamento</p>
+    </div>
+
+    <div class="how">
+      <div><b class="n">1</b><p><strong>Chame no WhatsApp</strong> pelo botão acima. A mensagem já vai pronta.</p></div>
+      <div><b class="n">2</b><p><strong>Faça o Pix</strong> com os dados que você vai receber na conversa.</p></div>
+      <div><b class="n">3</b><p><strong>Pronto, vaga confirmada.</strong> Você recebe a confirmação com o seu número de participante.</p></div>
+    </div>
+
+    <p class="eyebrow" style="margin-top:34px;text-align:center">Faltam</p>
+    <div class="countdown">
+      <div><b id="cd-d">--</b><span>dias</span></div>
+      <div><b id="cd-h">--</b><span>horas</span></div>
+      <div><b id="cd-m">--</b><span>min</span></div>
+      <div><b id="cd-s">--</b><span>seg</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Dúvidas</span>
+    <h2>Perguntas frequentes</h2>
+    <details>
+      <summary>Preciso ter experiência na parrilla?</summary>
+      <p>Não. O workshop é para quem gosta de churrasco e quer subir de nível, do iniciante a quem já assa toda semana.</p>
+    </details>
+    <details>
+      <summary>Posso dar de presente?</summary>
+      <p>Pode, e é um ótimo presente de Natal para quem ama churrasco. É só avisar no WhatsApp que a vaga é para outra pessoa e informar o nome dela.</p>
+    </details>
+    <details>
+      <summary>Como funciona o pagamento?</summary>
+      <p>O pagamento é via Pix. Você chama no WhatsApp, recebe os dados e, assim que o Pix cai, sua vaga está confirmada. Reservas sem pagamento não seguram a vaga.</p>
+    </details>
+    <details>
+      <summary>Por que só 10 vagas?</summary>
+      <p>Para que todo mundo fique perto da parrilla, tire as dúvidas na hora e tenha atenção de verdade do chef.</p>
+    </details>
+    <details>
+      <summary>Onde e quando vai ser?</summary>
+      <p>Quinta-feira, 10 de dezembro, a partir das 18h30, no Arandu Gastronomia, em Santa Rosa (RS).</p>
+    </details>
+  </div>
+</section>
+
+<!-- ================= FINAL ================= -->
+<section class="final">
+  <div class="bg"><img src="img/lenha.jpg" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <span class="badge"><i></i>Turma única</span>
+    <h2>Só 10 lugares <span class="script">em volta do fogo</span></h2>
+    <p class="sub">Quando as vagas acabarem, acabou. Garanta a sua agora.</p>
+    <a class="btn js-wpp" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></svg>
+      QUERO MINHA VAGA
+    </a>
+    <p class="micro">De <s>R$ 780</s> por <b>R$ 487</b></p>
+    <footer>
+      <div class="logo">ARANDU<small>gastronomia</small></div>
+      <p>Santa Rosa · RS</p>
+    </footer>
+  </div>
+</section>
+
+<script>
+  /* =======================================================
+     CONFIGURAÇÕES: edite só aqui
+     ======================================================= */
+  const WHATSAPP = "5555999999999";   // DDI + DDD + número, só dígitos (ex.: 5555991234567)
+  const VAGAS_RESTANTES = 10;         // vá atualizando conforme vender
+  const MENSAGEM = "Oi Elhias! Vi a página do workshop de parrilla do dia 10/12 e quero garantir minha vaga 🔥";
+  const EVENTO = new Date("2026-12-10T18:30:00-03:00");
+  /* ======================================================= */
+
+  const wppUrl = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(MENSAGEM);
+  document.querySelectorAll(".js-wpp").forEach(a => a.href = wppUrl);
+
+  document.querySelectorAll(".js-left").forEach(el => el.textContent = VAGAS_RESTANTES);
+  const dots = document.getElementById("dots");
+  for (let i = 0; i < 10; i++) {
+    const d = document.createElement("i");
+    if (i >= VAGAS_RESTANTES) d.className = "taken";
+    dots.appendChild(d);
+  }
+
+  const pad = n => String(n).padStart(2, "0");
+  function tick(){
+    let diff = Math.max(0, EVENTO - new Date());
+    const d = Math.floor(diff / 864e5); diff -= d * 864e5;
+    const h = Math.floor(diff / 36e5);  diff -= h * 36e5;
+    const m = Math.floor(diff / 6e4);   diff -= m * 6e4;
+    const s = Math.floor(diff / 1e3);
+    document.getElementById("cd-d").textContent = pad(d);
+    document.getElementById("cd-h").textContent = pad(h);
+    document.getElementById("cd-m").textContent = pad(m);
+    document.getElementById("cd-s").textContent = pad(s);
+  }
+  tick(); setInterval(tick, 1000);
+
+  // animação de entrada
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }), {threshold:.12});
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+</script>
+</body>
+</html>
